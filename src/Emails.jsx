@@ -1,20 +1,20 @@
-import Email from './Email'; // Importer Email-komponenten
-
-function Emails({ emails, toggleRead, toggleStar }) {
-  return (
+import Email from "./Email";
+function Emails({filteredEmails, toggleRead,toggleStar}){
+  return(
+    <>
     <main className="emails">
-      <ul>
-        {emails.map((email, index) => (
-          <Email
-            key={index}
-            email={email}
-            toggleRead={toggleRead}
-            toggleStar={toggleStar}
-          />
-        ))}
-      </ul>
-    </main>
+        <ul>
+          {filteredEmails.map((email, index) => (
+         <Email 
+         key={index}
+         email={email} 
+         toggleRead={toggleRead}
+          toggleStar={toggleStar}/>
+          ))}
+        </ul>
+      </main>
+      </>
+
   );
 }
-
-export default Emails;
+export default Emails
